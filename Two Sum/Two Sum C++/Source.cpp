@@ -57,7 +57,7 @@ int main()
 //}
 
 // solution 2: hash map, subtracting target with current number and checking if it exists in map.
-// if not, then add to map, and repeat.
+// if not, then add to map, else we found the pair answer.
 
 vector<int> twoSum(vector<int>& nums, int target)
 {
@@ -68,7 +68,7 @@ vector<int> twoSum(vector<int>& nums, int target)
 		int subtractedResult = target - nums[i];
 		if (toMap.count(subtractedResult))
 		{
-			return { toMap[subtractedResult], i  };
+			return { i, toMap[subtractedResult] };
 		}
 
 		toMap[nums[i]] = i;
