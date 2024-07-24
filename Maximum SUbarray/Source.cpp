@@ -6,6 +6,8 @@ using namespace std;
 
 class Solution {
 public:
+
+    // Kadane's algorithm.
     int maxSubArray(vector<int>& nums)
     {
         if (nums.size() == 1)
