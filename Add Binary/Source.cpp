@@ -11,6 +11,7 @@ public:
         int remainders = 0;
         string answer;
 
+        // pad the strings so they're same value.
         if (a.length() < b.length())
         {
             int diff = b.length() - a.length();
