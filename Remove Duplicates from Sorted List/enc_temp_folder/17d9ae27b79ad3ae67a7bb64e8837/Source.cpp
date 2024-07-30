@@ -82,14 +82,12 @@ public:
         ListNode* tail = head;
         while (tail->next != nullptr)
         {
-            // don't move to next item in list and keep updating next if head & next is same value
             if (tail->val == tail->next->val)
             {
                 tail->next = tail->next->next;
             }
             else
             {
-                // unique value found, move head to the next value
                 tail = tail->next;
             }
         }
