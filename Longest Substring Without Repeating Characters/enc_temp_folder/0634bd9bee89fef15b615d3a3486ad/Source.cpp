@@ -46,8 +46,6 @@ public:
     //    return result;
     //}
 
-
-    // solution 2 O(n) comparing index positions of characters.
     int lengthOfLongestSubstring(string s)
     {
         int result = 0;
@@ -67,7 +65,6 @@ public:
             {
                 start = seen[s[end]] + 1;
             }
-            // update char last found index
             seen[s[end]] = end;
 
             result = max(result, end - start + 1);
