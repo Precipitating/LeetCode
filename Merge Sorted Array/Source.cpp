@@ -25,10 +25,7 @@ public:
     // iterate from back of nums1 and place the biggest num from both containers.
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
     {
-        if (m == 0)
-        {
-            nums1 = nums2;
-        }
+
 
         int i = m - 1;
         int j = n - 1;
@@ -62,8 +59,8 @@ public:
 
 int main()
 {
-    vector<int> first = {};
-    vector<int> second = { 1 };
+    vector<int> first = {3};
+    vector<int> second = { -1,-2 };
     Solution s;
     s.merge(first, 0, second, 1);
 }
