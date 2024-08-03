@@ -80,7 +80,7 @@ public:
     //}
 
 
-    // second method, O(n^2), expand outwards from current char
+    // second method, O(n^2), expand outwards instead inwards.
     string longestPalindrome(string s)
     {
         string currentPalindrome;
