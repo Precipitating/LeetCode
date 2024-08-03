@@ -80,7 +80,7 @@ public:
     //}
 
 
-    // second method, O(n^2), expand outwards from current char
+    // second method, O(n^2) 
     string longestPalindrome(string s)
     {
         string currentPalindrome;
@@ -89,6 +89,7 @@ public:
         {
             int left = i, right = i;
 
+            // if both letters are not on the edge and they match...
             // check odd length palindromes
             while (left >= 0 && right < s.length() && s[left] == s[right])
             {
