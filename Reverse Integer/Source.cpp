@@ -28,13 +28,6 @@ public:
 
         }
 
-
-
-
-        if (isNeg)
-        {
-            result *= -1;
-        }
         return result;
 
 
