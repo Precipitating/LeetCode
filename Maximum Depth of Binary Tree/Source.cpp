@@ -32,7 +32,7 @@ public:
 
 
     }
-
+    // time complexity = o(N)
     void getDepth(TreeNode* root, int currentDepth, int& result)
     {
         result = max(currentDepth, result);
