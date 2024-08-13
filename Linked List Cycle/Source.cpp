@@ -13,21 +13,43 @@ struct ListNode
 class Solution 
 {
 public:
-    bool hasCycle(ListNode* head) 
-	{
-        while (head != nullptr)
+ //   // hash map method
+ //   bool hasCycle(ListNode* head) 
+	//{
+ //       while (head != nullptr)
+ //       {
+ //           if (seenNodes.count(head) == 0)
+ //           {
+ //               seenNodes[head] = idx;
+ //               ++idx;
+ //           }
+ //           else
+ //           {
+ //               isCycle = true;
+ //               break;
+ //           }
+ //           head = head->next;
+
+ //       }
+ //       return isCycle;
+ //   }
+
+    // hare and tortoise method, faster
+    bool hasCycle(ListNode* head)
+    {
+        ListNode* hare = head;
+        ListNode* tortoise = head;
+        while (hare != nullptr && hare->next != nullptr)
         {
-            if (seenNodes.count(head) == 0)
-            {
-                seenNodes[head] = idx;
-                ++idx;
-            }
-            else
+            hare = hare->next->next;
+            tortoise = tortoise->next;
+
+            if (hare == tortoise)
             {
                 isCycle = true;
                 break;
             }
-            head = head->next;
+
 
         }
         return isCycle;
@@ -48,6 +70,6 @@ int main()
     ListNode* next3 = new ListNode(-4);
     next2->next = next3;
     next3->next = next1;
-    s.hasCycle(head);
+    cout << s.hasCycle(head);
 	return 0;
 }
