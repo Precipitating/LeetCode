@@ -7,7 +7,7 @@ class Solution
 {
 public:
     // O(n) solution
-    int majorityElement(vector<int>& nums)
+    /*int majorityElement(vector<int>& nums)
     {
         int maxVal;
         unordered_map<int, int> seenValues;
@@ -42,6 +42,33 @@ public:
         return biggestElem.first;
 
         
+
+    }*/
+
+    //o(N) time complexity but O(1) space complexity
+    // swap result to be current num if count == 0
+    // the result will end up being highest because if there is more of it,
+    // it will out-increment the other numbers.
+    int majorityElement(vector<int>& nums)
+    {
+        int result = 0, highest = 0;
+        for (const int& num : nums)
+        {
+            if (highest == 0)
+            {
+                result = num;
+            }
+
+            if (num == result)
+            {
+                ++highest;
+            }
+            else
+            {
+                --highest;
+            }
+        }
+        return result;
 
     }
 };
