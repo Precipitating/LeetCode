@@ -18,30 +18,54 @@ struct ListNode
 class Solution
 {
 public:
+    //ListNode* reverseList(ListNode* head)
+    //{
+    //    ListNode* current = head;
+    //    ListNode* previous = nullptr;
+    //    SwapNode(current, previous, &head);
+
+    //    return head;
+
+    //}
+    //void SwapNode(ListNode* current, ListNode* previous, ListNode** head)
+    //{
+    //    if (current != nullptr)
+    //    {
+    //        ListNode* next = current->next;
+    //        swap(current->next, previous);
+
+    //        SwapNode(next, current, head);
+    //    }
+    //    else
+    //    {
+    //        *head = previous;
+    //    }
+
+
+
+    //}
+
     ListNode* reverseList(ListNode* head)
     {
-        ListNode* current = head;
         ListNode* previous = nullptr;
-        SwapNode(current, previous, &head);
+        ListNode* current = head;
+        ListNode* next = (current == nullptr) ? nullptr : current->next;
 
-        return head;
 
-    }
-    void SwapNode(ListNode* current, ListNode* previous, ListNode** head)
-    {
-        if (current != nullptr)
+        while (current != nullptr)
         {
-            ListNode* next = current->next;
-            swap(current->next, previous);
+            current->next = previous;
+            previous = current;
+            current = next;
+            if (current != nullptr)
+            {
+                next = current->next;
+            }
+            
 
-            SwapNode(next, current, head);
-        }
-        else
-        {
-            *head = previous;
         }
 
-
+        return previous;
 
     }
 
