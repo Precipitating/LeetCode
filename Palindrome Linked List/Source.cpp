@@ -19,65 +19,45 @@ public:
     bool isPalindrome(ListNode* head)
     {
         bool result = true;
-
+        ListNode* headCopy = head;
         stack<int> numberList;
-        int listSize = GetListSize(head, 0);
-        int idx = 0;
-        bool isOdd = false;
-
-        if (listSize % 2 != 0)
-        {    
-            isOdd = true;
-        }
-        listSize /= 2;
-
-
 
         while (head != nullptr)
         {
-            if (idx < listSize)
-            {
-                numberList.push(head->val);
-
-            }
-            else
-            {
-                if (!isOdd || idx != listSize)
-                {
-                    if (head->val != numberList.top())
-                    {
-                        result = false;
-                        break;
-                    }
-                    else
-                    {
-                        numberList.pop();
-                    }
-                }
-
-            }
-            ++idx;
+            numberList.push(head->val);
             head = head->next;
         }
+        head = headCopy;
+
+        while (head != nullptr)
+        {
+            if (head->val != numberList.top())
+            {
+                result = false;
+                break;
+            }
+
+            numberList.pop();
+            head = head->next;
+
+
+        }
+
+
 
         return result;
+
     }
 
-    int GetListSize(ListNode* head, int maxSize)
-    {
-        if (head != nullptr)
-        {
-            maxSize = max(maxSize, GetListSize(head->next, maxSize + 1));
-        } 
 
-        return maxSize;
-    }
+
+
 };
 
 int main()
 {
     Solution s;
-    ListNode* node = new ListNode(1, new ListNode(5));
+    ListNode* node = new ListNode(1, new ListNode(5, new ListNode(1)));
     cout << s.isPalindrome(node);
 
 
