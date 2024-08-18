@@ -5,7 +5,7 @@ using namespace std;
 class Solution
 {
 public:
-    // using hash map O(n) runtime, O(1) space complexity.
+    // using hash map O(n) runtime, O(k) space complexity.
     bool isAnagram(string s, string t)
     {
         bool result;
