@@ -31,7 +31,7 @@ public:
             curr.pop_back();
         }
 
-        // we don't want another ) if it doesn't pair up with an available (
+        // we don't want another ) if it doesn't pair up with an available ( 
         if (closeCount < n && (closeCount + 1) <= openCount)
         {
             GenerateCombo(curr.append(")"), result, n, openCount, closeCount+1);
