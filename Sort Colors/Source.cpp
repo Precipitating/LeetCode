@@ -5,28 +5,61 @@ using namespace std;
 class Solution
 {
 public:
-    void sortColors(vector<int>& nums) 
-    {
-        int zeroCount = count(nums.begin(), nums.end(), 0);
-        int oneCount = count(nums.begin(), nums.end(), 0);
-        int twoCount = count(nums.begin(), nums.end(), 0);
+    // count method o(n) (4 pass)
+    //void sortColors(vector<int>& nums) 
+    //{
+    //    int zeroCount = count(nums.begin(), nums.end(), 0);
+    //    int oneCount = count(nums.begin(), nums.end(), 1);
+    //    int twoCount = count(nums.begin(), nums.end(), 2);
+    //    for (size_t i = 0; i < nums.size(); ++i)
+    //    {
+    //        if (zeroCount != 0)
+    //        {
+    //            nums[i] = 0;
+    //            --zeroCount;
+    //        }
+    //        else if (oneCount != 0)
+    //        {
+    //            nums[i] = 1;
+    //            --oneCount;
+    //        }
+    //        else
+    //        {
+    //            nums[i] = 2;
+    //            --twoCount;
+    //        }
+    //    }
 
-        for (size_t i = 0; i < nums.size(); ++i)
+    //}
+
+    // dutch method (1 pass) (o(n)) 
+    // mid is used to traverse,
+    // idea is to keep all 0's before low
+    // and 2's after high
+    // if 1, then just go next
+    void sortColors(vector<int>& nums)
+    {
+        int low = 0;
+        int mid = 0;
+        int high = nums.size() - 1;
+
+
+        while (mid <= high)
         {
-            if (zeroCount != 0)
+            if (nums[mid] == 0)
             {
-                nums[i] = 0;
-                --zeroCount;
+                swap(nums[mid], nums[low]);
+                ++mid;
+                ++low;
             }
-            else if (oneCount != 0)
+            else if (nums[mid] == 1)
             {
-                nums[i] = 1;
-                --oneCount;
+                ++mid;
             }
             else
             {
-                nums[i] = 2;
-                --twoCount;
+                swap(nums[mid], nums[high]);
+                --high;
             }
         }
 
@@ -36,7 +69,7 @@ public:
 int main()
 {
     Solution s;
-    vector<int> nums = { 1 };
+    vector<int> nums = { 1,1,0,0,1,0,2,1,2 };
     s.sortColors(nums);
 
     return 0;
