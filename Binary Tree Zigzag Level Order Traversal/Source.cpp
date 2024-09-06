@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <stack>
 #include <queue>
+#include <deque>
 using namespace std;
 
 struct TreeNode
@@ -27,19 +27,29 @@ public:
 
         while (!nodeQueue.empty())
         {
-            vector<int> currentLine;
+            deque<int> currentLine;
             int currSize = nodeQueue.size();
 
             for (size_t i = 0; i < currSize; ++i)
             {
                 TreeNode* curr = nodeQueue.front(); nodeQueue.pop();
+                
 
                 if (curr != nullptr)
                 {
-                    currentLine.push_back(curr->val);
-                    nodeQueue.push(curr->left);
-                    nodeQueue.push(curr->right);
+                    if (zigZagSwitch)
+                    {
+                        currentLine.push_front(curr->val);
 
+                    }
+                    else
+                    {
+                        currentLine.push_back(curr->val);
+
+                    }
+
+                    if (curr->left) { nodeQueue.push(curr->left); }
+                    if (curr->right) { nodeQueue.push(curr->right); }
 
 
                 }
@@ -50,8 +60,7 @@ public:
 
             if (currentLine.size() > 0)
             {
-                if (zigZagSwitch && currentLine.size() > 1) { reverse(currentLine.begin(), currentLine.end()); }
-                result.push_back(move(currentLine));
+                result.push_back(vector<int>(currentLine.begin(), currentLine.end()));
                 
             }
 
