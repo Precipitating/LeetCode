@@ -30,7 +30,7 @@ public:
             if (isPalindrome(str, idx, i))
             {
                 current.push_back(str.substr(idx, i-idx+1));
-                Solve(str, idx + 1, current, result);
+                Solve(str, i + 1, current, result);
                 current.pop_back();
 
             }
