@@ -32,7 +32,7 @@ public:
         }
         else
         {
-            // if over capacity, remove least accessed item and insert new one
+            // if over capacity, remove least accessed item 
             if (cache.size() == maxSize)
             {
                 map.erase(cache.back().first);
@@ -40,11 +40,10 @@ public:
 
             }
             // place the new value to front
-            else
-            {
-                cache.emplace_front(key,value);
-                map[key] = cache.begin();
-            }
+
+            cache.emplace_front(key,value);
+            map[key] = cache.begin();
+
         }
     }
 
