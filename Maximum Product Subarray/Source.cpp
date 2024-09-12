@@ -15,7 +15,7 @@ public:
         for (size_t i = 1; i < nums.size(); ++i)
         {
             int curr = nums[i];
-            // two negs can create a positive so track 
+            // two negs can create a positive so track it
             int currMax = max(curr, max(maxNum * curr, minNum * curr));
             minNum = min(curr, min(maxNum * curr, minNum * curr));
 
@@ -33,7 +33,7 @@ int main()
 {
 
     Solution s;
-    vector<int> nums = { 2,3,-2,4 };
+    vector<int> nums = { 2,0,-2,4 };
     cout << s.maxProduct(nums);
 
 
