@@ -31,7 +31,7 @@ public:
                 int nextSum = curr.first + squares[i];
 
 
-                if (nextSum == n) { result = curr.second + 1; break; }
+                if (nextSum == n) { return curr.second + 1; }
 
                 if (nextSum < n && visited.find(nextSum) == visited.end())
                 {
@@ -43,7 +43,7 @@ public:
 
         }
 
-        return result;
+        return 0;
         
     }
 };
