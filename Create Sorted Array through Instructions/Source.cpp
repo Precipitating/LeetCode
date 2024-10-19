@@ -41,6 +41,7 @@ public:
 
     void Merge(int first, int mid, int last, vector<pair<int, int>>& pairVec, vector<int>& lesser, vector<int>& greater)
     {
+        // assign the lower/greater than i
         int firstTmp = first, k = first;
         for (int i = mid + 1; i <= last; ++i)
         {
@@ -56,6 +57,8 @@ public:
             greater[pairVec[i].second] += mid - k + 1;
         }
 
+
+        // merge 
         vector<pair<int,int>> temp(last - first + 1);
 
         int f = first, m = mid + 1, r = 0;
