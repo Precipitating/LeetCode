@@ -33,7 +33,7 @@ public:
 
     void BackTrack(int i, vector<int> &count, vector<int>& quantity, bool& result)
     {
-        if (i == quantity.size())
+        if (i == quantity.size() || result)
         {
             result = true;
             return;
