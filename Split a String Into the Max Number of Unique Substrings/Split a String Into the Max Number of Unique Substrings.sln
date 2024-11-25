@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Split a String Into the Max Number of Unique Substrings", "Split a String Into the Max Number of Unique Substrings.vcxproj", "{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Debug|x64.ActiveCfg = Debug|x64
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Debug|x64.Build.0 = Debug|x64
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Debug|x86.ActiveCfg = Debug|Win32
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Debug|x86.Build.0 = Debug|Win32
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Release|x64.ActiveCfg = Release|x64
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Release|x64.Build.0 = Release|x64
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Release|x86.ActiveCfg = Release|Win32
+		{781B4F16-31F8-447B-9738-0B6BD7E2BCD7}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ED09E2E-53F3-4D07-B3A3-E6F9EA319A61}
+	EndGlobalSection
+EndGlobal
