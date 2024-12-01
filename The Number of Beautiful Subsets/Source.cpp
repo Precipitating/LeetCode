@@ -11,7 +11,7 @@ public:
     {
         int result = 0;
         Solve(0,nums, k, result);
-        return result;
+        return result - 1;
     }
 
     void Solve(int idx, const vector<int>& nums, int k, int& result)
