@@ -20,23 +20,28 @@ public:
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) 
     {
         vector<int> curr;
-        Solve(root, curr, 0, targetSum);
+        Solve(root, curr,targetSum);
 
         return result;
     }
 
-    void Solve(TreeNode* root, vector<int>& curr, int currSum, int target)
+    void Solve(TreeNode* root, vector<int>& curr, int target)
     {
         if (!root) { return; }
         curr.push_back(root->val);
+        if (!root->left && !root->right && target == root->val)
+        { 
+            result.push_back(curr);
 
-        currSum += root->val;
-        if (!root->left && !root->right && currSum == target) { result.push_back(curr); return; }
-
-        Solve(root->left, curr, currSum, target);
-        Solve(root->right, curr, currSum, target);
-
+        }
+        else
+        {
+            Solve(root->left, curr, target - root->val);
+            Solve(root->right, curr, target - root->val);
+        }
         curr.pop_back();
+
+
 
 
 
