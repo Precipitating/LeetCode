@@ -37,6 +37,11 @@ public:
             if (Solve(i + 1, target, sum + nums[i], nums, visited, k)) { return true; }
             visited[i] = false;
 
+            // huge optimisation, if first number fails the rest will fail (since descending order),
+            // so no point recursing.
+
+            if (sum == 0) { break; }
+
         }
 
         return false;
