@@ -39,7 +39,7 @@ public:
     }
 
 private:
-    int result = 0;
+    int result = 1;
 };
 
 int main()
