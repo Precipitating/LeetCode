@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{03b1cc07-147f-4535-bb46-9fd4874eeb2e}</ProjectGuid>
-    <RootNamespace>PartitioningIntoMinimumNumberOfDeciBinaryNumbers</RootNamespace>
+    <ProjectGuid>{3ec934e9-6c58-470a-8955-7309dada20ef}</ProjectGuid>
+    <RootNamespace>GroupthePeopleGiventheGroupSizeTheyBelongTo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
